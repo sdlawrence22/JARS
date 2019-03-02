@@ -12,20 +12,29 @@ class GameLogic
 	void CollectInput(User a, CpuPlayer b){
 		P1Choice = a.RPS();
 		P2Choice = b.getCpuChoice();
+
 	}
-	void SetWinner(){
-		if(P1Choice == P2Choice) winner = "nobody";
-		else if(((P1Choice == 0) && (P2Choice == 2))|| ((P1Choice == 1) && (P2Choice == 0)) || ((P1Choice == 2) && (P2Choice == 1))){
+	void SetWinner(User &a){
+
+		if(P1Choice == P2Choice){
+			winner = "nobody";
+		}
+		else if(((P1Choice == 1) && (P2Choice == 3))|| ((P1Choice == 2) && (P2Choice == 1)) || ((P1Choice == 3) && (P2Choice == 2))){
 			winner = "Player 1";
+			a.IncrementWins();
+
+
 		}
 		else{
+			a.IncrementLosses();
 			winner = "the CPU";
+
 		}
 	}
 	void DisplayResults(){
 		printf("The winner was ");
 		cout<<winner<<endl;
-		printf("The cpu chose %i \n", P2Choice);
+
 	}
 	bool UpdateUserRecord();
 	bool UpdateLB();
@@ -35,6 +44,7 @@ class GameLogic
 	int P2Choice;
 	string winner;
 	
+
 };
 
 #endif /* GameLogic_H_ */

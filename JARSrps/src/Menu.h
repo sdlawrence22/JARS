@@ -36,17 +36,23 @@ class Menu
 	void NewUser(string name){
 		User a;
 		a.SetUsername(name);
+		a.Wins=0;
+		a.Losses=0;
 		currentuser = a;
 		UserChoice = 0;
 	}
 	void StartGame(){
 		GameLogic Test;
 		CpuPlayer cpu;
+		User P1;
+		P1.Wins=0;
+		P1.Losses=0;
 		for(int i=0;i<20;i++){
 		Test.CollectInput(currentuser, cpu);
-		Test.SetWinner();
+		Test.SetWinner(currentuser);
 		Test.DisplayResults();
 		}
+
 	}
 	private:
 	int UserChoice;

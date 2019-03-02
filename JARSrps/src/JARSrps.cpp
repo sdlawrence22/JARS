@@ -15,6 +15,7 @@ int main() {
 
 Menu a;
 while(1){
+	printf("Please press 2 first to store name, then 3 to begin game, and 1 to see the result\n");
 	a.MakeDecision();
 }
 

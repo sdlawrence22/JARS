@@ -18,9 +18,11 @@ class User
 	}
 	void IncrementWins(){
 		Wins +=1;
+		//printf("You have won %i times \n", Wins);
 	}
 	void IncrementLosses(){
 		Losses +=1;
+		//printf("You have lost %i times \n", Losses);
 	}
 	int GetLosses(){
 		return Losses;
@@ -36,11 +38,11 @@ class User
 		cin >> RPS;
 		return RPS;
 	}
-
-	private:
-	string Username;
 	int Wins;
 	int Losses;
+	private:
+	string Username;
+
 	int Wintreak;
 	int HighestWinStreak;
 

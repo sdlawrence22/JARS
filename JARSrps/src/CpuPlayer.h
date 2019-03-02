@@ -11,6 +11,7 @@ class CpuPlayer
 	public:
 	void Decision(){
 		CpuChoice = (rand()%3) + 1;
+		printf("The cpu chose %i \n", CpuChoice);
 	}
 	int getCpuChoice(){
 		Decision();
