@@ -21,6 +21,7 @@
 using namespace std;
 class FileManager{
 public:
+
 static void createGG(){
 		ofstream myFile("gg.txt");
 
