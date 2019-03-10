@@ -16,27 +16,19 @@ void Menu::ShowUserInfo(User *a){
     int wins = a->GetWins();
     int losses = a->GetLosses();
 
-    cout<<a->GetUserName();
-    printf(" has %i wins and %i losses \n", wins, losses);
+    cout<<a->GetUserName()<<" has "<<currentuser->Wins<<" wins and "<<currentuser->Losses<<" losses"<<endl;
 }
 
 void Menu::NewUser(){
     cout<<"Enter your name: ";
     string n;
     cin>>n;
-    User *a;
-    a->SetUsername(n);
-    a->Wins=0;
-    a->Losses=0;
-    currentuser = a;
+    currentuser = new User(n, 0, 0);
     UserChoice = 0;
 }
 
 void Menu::StartGame(string cmd){
     GameLogic Test;
-    User P1;
-    P1.Wins=0;
-    P1.Losses=0;
 
     if(cmd == "-r"){
         CpuR *rand = new CpuR();
@@ -50,12 +42,4 @@ void Menu::StartGame(string cmd){
     }else if(cmd == "-m"){
         //do something
     }
-    // for(int i=0;i<3;i++){
-    //     Test.CollectInput(currentuser, cpu);
-    //     Test.SetWinner(currentuser);
-    //     Test.DisplayResults();
-    // }
-    // CpuPlayer cpu;
-    // User P1;
-    
 }

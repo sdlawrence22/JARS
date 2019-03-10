@@ -12,6 +12,7 @@ class Menu
 	public:
 	void MakeDecision(string cmd);
 	void ShowUserInfo(User *a);
+	// User* getCurrentUser();
 	// void NewUser(string name);
 	void NewUser();
 	void StartGame(string cmd);
