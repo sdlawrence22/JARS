@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <string>
+#include "Choice.h"
 using namespace std;
 class User
 {
@@ -22,7 +23,8 @@ class User
 	bool SetHighestStreak();
 	void CheckStreak();
 
-	int RPS();
+	// int RPS();
+	Choice PlayersPick();
 	
 	int Wins;
 	int Losses;

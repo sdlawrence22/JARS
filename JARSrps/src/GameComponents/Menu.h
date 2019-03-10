@@ -11,7 +11,8 @@ class Menu
 	public:
 	void MakeDecision();
 	void ShowUserInfo(User a);
-	void NewUser(string name);
+	// void NewUser(string name);
+	void NewUser();
 	void StartGame();
 
 	private:

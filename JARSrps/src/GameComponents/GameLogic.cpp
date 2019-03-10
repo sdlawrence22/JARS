@@ -1,17 +1,17 @@
 #include "GameLogic.h"
 
 void GameLogic::CollectInput(User a, CpuPlayer b){
-    P1Choice = a.RPS();
-    P2Choice = b.getCpuChoice();
+    P1Choice = a.PlayersPick();
+    P2Choice = b.Decision();
 }
 
 void GameLogic::SetWinner(User &a){
     if(P1Choice == P2Choice){
         winner = "nobody";
     }
-    else if(((P1Choice == 1) && (P2Choice == 3)) ||
-     ((P1Choice == 2) && (P2Choice == 1)) || 
-     ((P1Choice == 3) && (P2Choice == 2))){
+    else if(((P1Choice == Choice::ROCK) && (P2Choice == Choice::SCISSOR)) ||
+     ((P1Choice == Choice::PAPER) && (P2Choice == Choice::ROCK)) || 
+     ((P1Choice == Choice::SCISSOR) && (P2Choice == Choice::PAPER))){
         winner = "Player 1";
         a.IncrementWins();
     }

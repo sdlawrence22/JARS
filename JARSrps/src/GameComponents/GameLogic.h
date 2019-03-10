@@ -5,7 +5,9 @@
 #include <string>
 #include "CpuPlayer.h"
 #include "User.h"
+#include "Choice.h"
 using namespace std;
+
 class GameLogic
 {
 	public:
@@ -17,11 +19,9 @@ class GameLogic
 	bool PlayAgain();
 	
 	private:
-	int P1Choice;
-	int P2Choice;
+	Choice P1Choice;
+	Choice P2Choice;
 	string winner;
-	
-
 };
 
 #endif /* GameLogic_H_ */

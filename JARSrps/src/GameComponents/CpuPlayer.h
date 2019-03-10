@@ -5,21 +5,32 @@
 #include <string>
 #include <stdlib.h>
 #include <stdio.h>
+#include "Choice.h"
 using namespace std;
 class CpuPlayer
 {
 	public:
-	void Decision(){
-		CpuChoice = (rand()%3) + 1;
-		printf("The cpu chose %i \n", CpuChoice);
+	Choice Decision(){
+		int CpuChoice = (rand()%3) + 1;
+
+		switch(CpuChoice){
+			case 1: cpu = Choice::ROCK; break;
+			case 2: cpu = Choice::PAPER; break;
+			case 3: cpu = Choice::SCISSOR; break;
+
+		}
+		// printf("The cpu chose %i \n", CpuChoice);
+		cout<<"The cpu chose "<<cpu<<endl;
+		return cpu;
 	}
-	int getCpuChoice(){
-		Decision();
-		return CpuChoice;
-	}
+	// int getCpuChoice(){
+	// 	Decision();
+	// 	return CpuChoice;
+	// }
 
 	private:
-	int CpuChoice;
+	// int CpuChoice;
+	Choice cpu;
 	
 };
 
