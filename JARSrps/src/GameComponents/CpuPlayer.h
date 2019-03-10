@@ -10,26 +10,19 @@ using namespace std;
 class CpuPlayer
 {
 	public:
-	Choice Decision(){
-		int CpuChoice = (rand()%3) + 1;
+	void choiceSetter(Choice ch){
+		cpu = ch;
+	}
 
-		switch(CpuChoice){
-			case 1: cpu = Choice::ROCK; break;
-			case 2: cpu = Choice::PAPER; break;
-			case 3: cpu = Choice::SCISSOR; break;
-
-		}
-		// printf("The cpu chose %i \n", CpuChoice);
-		cout<<"The cpu chose "<<cpu<<endl;
+	Choice choiceGetter(){
 		return cpu;
 	}
-	// int getCpuChoice(){
-	// 	Decision();
-	// 	return CpuChoice;
-	// }
+
+	virtual void Decision(){
+		
+	}
 
 	private:
-	// int CpuChoice;
 	Choice cpu;
 	
 };

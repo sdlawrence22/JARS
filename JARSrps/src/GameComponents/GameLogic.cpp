@@ -1,11 +1,11 @@
 #include "GameLogic.h"
 
-void GameLogic::CollectInput(User a, CpuPlayer b){
-    P1Choice = a.PlayersPick();
-    P2Choice = b.Decision();
+void GameLogic::CollectInput(User *a, CpuPlayer *b){
+    P1Choice = a->PlayersPick();
+    P2Choice = b->choiceGetter();
 }
 
-void GameLogic::SetWinner(User &a){
+void GameLogic::SetWinner(User *a){
     if(P1Choice == P2Choice){
         winner = "nobody";
     }
@@ -13,10 +13,10 @@ void GameLogic::SetWinner(User &a){
      ((P1Choice == Choice::PAPER) && (P2Choice == Choice::ROCK)) || 
      ((P1Choice == Choice::SCISSOR) && (P2Choice == Choice::PAPER))){
         winner = "Player 1";
-        a.IncrementWins();
+        a->IncrementWins();
     }
     else{
-        a.IncrementLosses();
+        a->IncrementLosses();
         winner = "the CPU";
 
     }

@@ -7,20 +7,31 @@
 //============================================================================
 
 #include <iostream>
+#include <string>
 #include "GameComponents/Menu.h"
 #include "GameComponents/CpuPlayer.h"
 #include "GameComponents/FileManager.h"
 using namespace std;
 
-int main() {
+int main(int argc, char* argv[]) {
 	//cout << "Hello World!!!" << endl; // prints !!!Hello World!!!
 
-	// Menu a;
-	// while(1){
-	// 	printf("Please press 2 first to store name, then 3 to begin game, and 1 to see the result\n");
-	// 	a.MakeDecision();
+	Menu a;
+	string command(argv[1]);
+	while(1){
+		printf("Please press 2 first to store name, then 3 to begin game, and 1 to see the result\n");
+		a.MakeDecision(command);
+	}
+	// for(int i = 0; i < argc; ++i){
+	// 	cout<<"this is the command: "<<argv[i]<<"\n";
 	// }
-
+	// string command(argv[1]);
+	
+	// if(command == "-r"){
+	// 	cout<<"random"<<endl;
+	// }else if(command == "-m"){
+	// 	cout<<"marchine learning"<<endl;
+	// }
 	FileManager fm;
 	fm.createGG();
 

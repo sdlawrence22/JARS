@@ -5,19 +5,20 @@
 #include <string>
 #include "User.h"
 #include "GameLogic.h"
+
 using namespace std;
 class Menu
 {
 	public:
-	void MakeDecision();
-	void ShowUserInfo(User a);
+	void MakeDecision(string cmd);
+	void ShowUserInfo(User *a);
 	// void NewUser(string name);
 	void NewUser();
-	void StartGame();
+	void StartGame(string cmd);
 
 	private:
 	int UserChoice;
-	User currentuser;
+	User *currentuser;
 };
 
 #endif /* Menu_H */
