@@ -23,6 +23,7 @@ int main() {
 
 	FileManager fm;
 	fm.createGG();
+	fm.readFromFile();
 
 	return 0;
 }
