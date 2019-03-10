@@ -12,9 +12,11 @@ using namespace std;
 class CpuPlayer
 {
 	public:
-	string playerChoices;
+	char playerChoices[5];
 	bool AIOn;
 	vector <string> decisionsList;
+
+
 
 	void Decision(){
 		if(AIOn==false){
