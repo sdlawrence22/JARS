@@ -5,6 +5,7 @@
 #include <string>
 #include "CpuPlayer.h"
 #include "CpuR.h"
+#include "CpuML.h"
 #include "User.h"
 #include "Choice.h"
 using namespace std;

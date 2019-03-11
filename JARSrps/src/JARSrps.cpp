@@ -11,6 +11,9 @@
 #include "GameComponents/Menu.h"
 #include "GameComponents/CpuPlayer.h"
 #include "GameComponents/FileManager.h"
+#include "GameComponents/CpuPlayer.h"
+#include "GameComponents/CpuR.h"
+#include "GameComponents/CpuR.h"
 using namespace std;
 
 int main(int argc, char* argv[]) {
@@ -19,11 +22,11 @@ int main(int argc, char* argv[]) {
 	string command(argv[1]);
 	
 	while(1){
-		printf("Please press 2 first to store name, then 3 to begin game, and 1 to see the result\n");
+		printf("Please press 1 first to store name, then 2 to begin game, and 3 to see the result\n");
 		a.MakeDecision(command);
 	}
-	FileManager fm;
-	fm.createGG();
+	// FileManager fm;
+	// fm.createGG();
 
 	return 0;
 }

@@ -50,10 +50,39 @@ void FileManager::createGG(){
 
 vector<string> FileManager::readFromFile(){
     vector<string> ggData;
+    vector<string>::iterator it = ggData.begin();
+    int i=0;
 	string in;
 	ifstream myFile("gg.txt");
-	while(myFile){
-		cout<< char(myFile.get());
+		while(!myFile.eof()){
+		getline(myFile, in);
+		ggData.push_back(in);
 	}
+
+	// for(int i=0; i<ggData.size(); i++){
+	// 	cout<<ggData[i]<<endl;
+	// }
+	myFile.close();
 	return ggData;
+}
+void FileManager::writeToFile(vector<string> file){
+	ofstream myFile("gg.txt");
+	if(myFile.is_open())   
+    {
+        for(int i=0; i< 243; i++){
+			for(int j=0; j<7; j++){
+				myFile << file[i][j];
+				//cout<<file[i][j];
+			}
+			myFile << endl;
+			//cout<<endl;
+		}   
+		//printf("File Updated\n");       
+    }
+    else 
+    {
+        //GG no re we lost our file or it failed to open
+		printf("Error file 'gg.txt' didnt open\n");
+    }
+	myFile.close();
 }

@@ -3,11 +3,11 @@
 void Menu::MakeDecision(string cmd){
     printf("Enter 1-3 ");
     cin >> UserChoice;
-
+    
     switch(UserChoice){
-        case 1: ShowUserInfo(currentuser); break;
-        case 2: NewUser(); break;
-        case 3: StartGame(cmd); break;
+        case 1: NewUser(); break;       
+        case 2: StartGame(cmd); break;
+        case 3: ShowUserInfo(currentuser); break;
         default: break;
     }
 }
@@ -33,13 +33,20 @@ void Menu::StartGame(string cmd){
     if(cmd == "-r"){
         CpuR *rand = new CpuR();
         for(int i = 0; i < 3; i++){
-            rand->Decision();
+            
             Test.CollectInput(currentuser, rand);
             Test.SetWinner(currentuser);
             Test.DisplayResults();
         }
 
     }else if(cmd == "-m"){
-        //do something
+        CpuML *mlearn = new CpuML();
+        for(int i = 0; i < 20; i++){
+            
+            Test.CollectInput(currentuser, mlearn);
+            Test.SetWinner(currentuser);
+            
+            Test.DisplayResults();
+        }
     }
 }

@@ -6,6 +6,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "Choice.h"
+#include "FileManager.h"
 using namespace std;
 class CpuPlayer
 {
@@ -19,7 +20,10 @@ class CpuPlayer
 	}
 
 	virtual void Decision(){
-		
+		//subclasses will set cpu by overwritting this
+	}
+	virtual void Modifylast5(Choice lastchoice){
+		//only simple ml uses this for now
 	}
 
 	private:

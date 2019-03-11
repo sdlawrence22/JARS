@@ -2,7 +2,10 @@
 
 void GameLogic::CollectInput(User *a, CpuPlayer *b){
     P1Choice = a->PlayersPick();
+    b->Decision();
     P2Choice = b->choiceGetter();
+    b->Modifylast5(P1Choice);
+    
 }
 
 void GameLogic::SetWinner(User *a){
@@ -26,3 +29,4 @@ void GameLogic::DisplayResults(){
     printf("The winner was ");
     cout<<winner<<endl;
 }
+
