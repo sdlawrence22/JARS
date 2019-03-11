@@ -14,7 +14,7 @@ using namespace std;
 class CpuML : public CpuPlayer	
 {
 	public:
-	CpuML() : counter(0) {}
+	CpuML() : counter() {}
 	void Decision(){
 		FileManager File;
          ggData = File.readFromFile();
@@ -25,14 +25,17 @@ class CpuML : public CpuPlayer
 			if((int(ggData[i][6]) >= int(ggData[i+1][6])) && (int(ggData[i][6]) >= int(ggData[i+2][6]))){
 				//They will choose rock lets choose paper
 				choiceSetter(Choice::PAPER);
+				cout<<"The CPU chose paper\n";
 			}
 			else if((int(ggData[i+1][6]) >= int(ggData[i][6])) && (int(ggData[i+1][6]) >= int(ggData[i+2][6]))){
 				//They will choose paper lets choose scissor
 				choiceSetter(Choice::SCISSOR);
+				cout<<"The CPU chose scissors\n";
 			}
 			else{
 				//They will choose scissor lets choose rock
 				choiceSetter(Choice::ROCK);
+				cout<<"The CPU chose rock\n";
 			}
 		}
 			
@@ -54,7 +57,7 @@ class CpuML : public CpuPlayer
 	}
 	}
 	void Modifylast5(Choice lastchoice){
-		if(counter > 5){
+		if(counter >= 5){
 			switch(lastchoice){
 				case(Choice::ROCK): shifterInsert('R'); break;
 				case(Choice::PAPER): shifterInsert('P'); break;
@@ -106,18 +109,13 @@ class CpuML : public CpuPlayer
 	int temp = findPosition2(ggData);
 	// int temp2 = int(ggData[temp][6]);
 	// temp2 +=1;
-	for(int k=0;k<7;k++){
-				cout<<ggData[temp][k];
-			}cout<<endl;
+
 	if(ggData[temp][6] == '9'){
 					//dont add will break
 				}
 				else{
 					ggData[temp][6] +=1;
 				}
-	for(int k=0;k<7;k++){
-				cout<<ggData[temp][k];
-			}cout<<endl;
 	File.writeToFile(ggData);
 	}
 	int findPosition(vector<string> ggData){
@@ -132,7 +130,7 @@ class CpuML : public CpuPlayer
 					
 					
 				}
-				cout<<last5[z+1];
+				//cout<<last5[z+1];
 				mover = mover/3;
 				
 

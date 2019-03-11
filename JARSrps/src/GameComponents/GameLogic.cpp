@@ -28,5 +28,6 @@ void GameLogic::SetWinner(User *a){
 void GameLogic::DisplayResults(){
     printf("The winner was ");
     cout<<winner<<endl;
+    
 }
 
