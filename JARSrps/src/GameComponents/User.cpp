@@ -8,7 +8,7 @@ string User::GetUserName(){
 
 void User::SetUsername(string a){
     Username = a;
-    cout<<"are we going here"<<endl;
+    // cout<<"are we going here"<<endl;
 }
 
 int User::GetWins(){

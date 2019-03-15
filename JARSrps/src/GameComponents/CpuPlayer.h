@@ -8,6 +8,7 @@
 #include "Choice.h"
 #include "FileManager.h"
 using namespace std;
+
 class CpuPlayer
 {
 	public:

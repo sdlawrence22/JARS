@@ -22,6 +22,9 @@ class CpuR : public CpuPlayer
 
 		}
 	}
+	void test(){
+		cout<<"testing that we can access";
+	}
 
 	// private:
 	// Choice cpu;

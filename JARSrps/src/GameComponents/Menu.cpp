@@ -45,7 +45,6 @@ void Menu::StartGame(string cmd){
             
             Test.CollectInput(currentuser, mlearn);
             Test.SetWinner(currentuser);
-            
             Test.DisplayResults();
         }
     }

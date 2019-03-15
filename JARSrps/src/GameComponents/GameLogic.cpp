@@ -9,6 +9,7 @@ void GameLogic::CollectInput(User *a, CpuPlayer *b){
 }
 
 void GameLogic::SetWinner(User *a){
+    // cout<<"we going in here via machine learn?"<<endl;
     if(P1Choice == P2Choice){
         winner = "nobody";
     }
@@ -30,4 +31,3 @@ void GameLogic::DisplayResults(){
     cout<<winner<<endl;
     
 }
-

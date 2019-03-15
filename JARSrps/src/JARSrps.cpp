@@ -13,7 +13,7 @@
 #include "GameComponents/FileManager.h"
 #include "GameComponents/CpuPlayer.h"
 #include "GameComponents/CpuR.h"
-#include "GameComponents/CpuR.h"
+#include "GameComponents/CpuML.h"
 using namespace std;
 
 int main(int argc, char* argv[]) {

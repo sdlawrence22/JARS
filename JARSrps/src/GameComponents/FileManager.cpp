@@ -51,18 +51,22 @@ void FileManager::createGG(){
 vector<string> FileManager::readFromFile(){
     vector<string> ggData;
     vector<string>::iterator it = ggData.begin();
-    int i=0;
+	
 	string in;
-	ifstream myFile("gg.txt");
+	ifstream myFile;
+	myFile.open("gg.txt");
+	
+	if(myFile.is_open()){
 		while(!myFile.eof()){
-		getline(myFile, in);
-		ggData.push_back(in);
+			getline(myFile, in);
+			ggData.push_back(in);
+		}
 	}
-
 	// for(int i=0; i<ggData.size(); i++){
 	// 	cout<<ggData[i]<<endl;
 	// }
 	myFile.close();
+	
 	return ggData;
 }
 void FileManager::writeToFile(vector<string> file){
