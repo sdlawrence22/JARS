@@ -16,10 +16,12 @@ class Menu
 	// void NewUser(string name);
 	void NewUser();
 	void StartGame(string cmd);
+	void Setfirsttime(bool logic);
 
 	private:
 	int UserChoice;
 	User *currentuser;
+	bool firsttime;
 };
 
 #endif /* Menu_H */

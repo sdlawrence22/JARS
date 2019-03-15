@@ -1,9 +1,15 @@
 #include "Menu.h"
 
 void Menu::MakeDecision(string cmd){
-    printf("Enter 1-3 ");
-    cin >> UserChoice;
     
+    if(firsttime == true){
+        UserChoice = 1;
+        firsttime = false;
+    }
+    else{
+        printf("Enter 1-3 ");
+        cin >> UserChoice;
+    }
     switch(UserChoice){
         case 1: NewUser(); break;       
         case 2: StartGame(cmd); break;
@@ -48,4 +54,8 @@ void Menu::StartGame(string cmd){
             Test.DisplayResults();
         }
     }
+}
+
+void Menu::Setfirsttime(bool logic){
+    firsttime = logic;
 }

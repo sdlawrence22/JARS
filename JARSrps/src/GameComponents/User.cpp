@@ -28,15 +28,18 @@ int User::GetLosses(){
 }
 
 Choice User::PlayersPick(){
-    int RPS;
-
-    printf("Enter 1, 2, or 3 for rock, paper, scissors respectively \n");
-    cin >> RPS;
-    switch(RPS){
-        case 1: return Choice::ROCK;
-        case 2: return Choice::PAPER;
-        case 3: return Choice::SCISSOR;
-        default: return Choice::INVALID;
+    while(true){
+        printf("Enter 1, 2, or 3 for rock, paper, scissors respectively \n");
+        int RPS;
+        cin >> RPS;
+        switch(RPS){
+            case 1: return Choice::ROCK;
+            case 2: return Choice::PAPER;
+            case 3: return Choice::SCISSOR;
+            default: printf("Please make a valid choice\n");
+        }
+        cin.clear();
+        cin.ignore();
     }
 }
 
