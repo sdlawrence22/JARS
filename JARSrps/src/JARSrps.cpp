@@ -17,7 +17,6 @@
 using namespace std;
 
 int main(int argc, char* argv[]) {
-
 	Menu a;
 	string command(argv[1]);
 	
@@ -25,19 +24,6 @@ int main(int argc, char* argv[]) {
 		printf("Please press 1 first to store name, then 2 to begin game, and 3 to see the result\n");
 		a.MakeDecision(command);
 	}
-	// FileManager fm;
-	// fm.createGG();
 
 	return 0;
 }
-
-// for(int i = 0; i < argc; ++i){
-	// 	cout<<"this is the command: "<<argv[i]<<"\n";
-	// }
-	// string command(argv[1]);
-	
-	// if(command == "-r"){
-	// 	cout<<"random"<<endl;
-	// }else if(command == "-m"){
-	// 	cout<<"marchine learning"<<endl;
-	// }

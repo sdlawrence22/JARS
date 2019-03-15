@@ -52,23 +52,21 @@ vector<string> FileManager::readFromFile(){
     vector<string> ggData;
     vector<string>::iterator it = ggData.begin();
 	
-	string in;
-	ifstream myFile;
-	myFile.open("gg.txt");
+    string in;
+    ifstream myFile;
+    myFile.open("gg.txt");
+
+    if(myFile.is_open()){
+      while(!myFile.eof()){
+        getline(myFile, in);
+        ggData.push_back(in);
+      }
+
+	  myFile.close();
 	
-	if(myFile.is_open()){
-		while(!myFile.eof()){
-			getline(myFile, in);
-			ggData.push_back(in);
-		}
-	}
-	// for(int i=0; i<ggData.size(); i++){
-	// 	cout<<ggData[i]<<endl;
-	// }
-	myFile.close();
-	
-	return ggData;
+	  return ggData;
 }
+
 void FileManager::writeToFile(vector<string> file){
 	ofstream myFile("gg.txt");
 	if(myFile.is_open())   
