@@ -8,29 +8,26 @@ using namespace std;
 class User
 {
 	public:
+	User(string name, int victory, int fatL);
 	string GetUserName();
 	void SetUsername(string a);
-		// Username = a;
-
 	int GetWins();
 	void IncrementWins();
 	void IncrementLosses();
 	int GetLosses();
+	Choice PlayersPick();
 	//TODOs:
 	int GetWinStreak();
 	bool SetWinStreak();
 	int GetHighestStreak();
 	bool SetHighestStreak();
 	void CheckStreak();
-
 	// int RPS();
-	Choice PlayersPick();
-	
 	int Wins;
 	int Losses;
+
 	private:
 	string Username;
-
 	int Wintreak;
 	int HighestWinStreak;
 

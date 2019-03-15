@@ -24,6 +24,7 @@ public:
 
 static void createGG();
 vector<string> readFromFile();
+void writeToFile(vector<string> file);
 
 };
 

@@ -1,11 +1,14 @@
 #include "User.h"
 
+User::User(string name, int victory, int fatL) : Username(name), Wins(victory), Losses(fatL){}
+
 string User::GetUserName(){
     return Username;
 }
 
 void User::SetUsername(string a){
     Username = a;
+    // cout<<"are we going here"<<endl;
 }
 
 int User::GetWins(){
@@ -24,13 +27,6 @@ int User::GetLosses(){
     return Losses;
 }
 
-// int User::RPS(){
-//     int RPS;
-//     printf("Enter 1, 2, or 3 for rock, paper, scissors respectively \n");
-//     cin >> RPS;
-//     return RPS;
-// }
-
 Choice User::PlayersPick(){
     int RPS;
 
@@ -43,3 +39,10 @@ Choice User::PlayersPick(){
         default: return Choice::INVALID;
     }
 }
+
+// int User::RPS(){
+//     int RPS;
+//     printf("Enter 1, 2, or 3 for rock, paper, scissors respectively \n");
+//     cin >> RPS;
+//     return RPS;
+// }
