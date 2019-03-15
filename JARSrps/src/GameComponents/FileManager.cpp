@@ -61,6 +61,7 @@ vector<string> FileManager::readFromFile(){
         getline(myFile, in);
         ggData.push_back(in);
       }
+		}
 
 	  myFile.close();
 	
@@ -69,9 +70,8 @@ vector<string> FileManager::readFromFile(){
 
 void FileManager::writeToFile(vector<string> file){
 	ofstream myFile("gg.txt");
-	if(myFile.is_open())   
-    {
-        for(int i=0; i< 243; i++){
+	if(myFile.is_open()){
+		for(int i=0; i< 243; i++){
 			for(int j=0; j<7; j++){
 				myFile << file[i][j];
 				//cout<<file[i][j];
