@@ -18,10 +18,11 @@ using namespace std;
 
 int main(int argc, char* argv[]) {
 	Menu a;
+	a.Setfirsttime(true);
 	string command(argv[1]);
 	
 	while(1){
-		printf("Please press 1 first to store name, then 2 to begin game, and 3 to see the result\n");
+		printf("Please press 1 to store a new name, 2 to begin match, or 3 to see the record\n");
 		a.MakeDecision(command);
 	}
 

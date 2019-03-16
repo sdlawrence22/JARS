@@ -1,15 +1,23 @@
 #include "Menu.h"
 
 void Menu::MakeDecision(string cmd){
-    printf("Enter 1-3 ");
-    cin >> UserChoice;
     
+    if(firsttime == true){
+        UserChoice = 1;
+        firsttime = false;
+    }
+    else{
+        printf("Enter 1-3 ");
+        cin >> UserChoice;
+    }
     switch(UserChoice){
         case 1: NewUser(); break;       
         case 2: StartGame(cmd); break;
         case 3: ShowUserInfo(currentuser); break;
         default: break;
     }
+    cin.clear();
+    cin.ignore();
 }
 
 void Menu::ShowUserInfo(User *a){
@@ -32,7 +40,7 @@ void Menu::StartGame(string cmd){
 
     if(cmd == "-r"){
         CpuR *rand = new CpuR();
-        for(int i = 0; i < 3; i++){
+        for(int i = 0; i < 20; i++){
             
             Test.CollectInput(currentuser, rand);
             Test.SetWinner(currentuser);
@@ -48,4 +56,8 @@ void Menu::StartGame(string cmd){
             Test.DisplayResults();
         }
     }
+}
+
+void Menu::Setfirsttime(bool logic){
+    firsttime = logic;
 }
