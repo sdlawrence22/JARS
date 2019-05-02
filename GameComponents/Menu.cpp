@@ -1,16 +1,16 @@
 #include "Menu.h"
-
-void Menu::MakeDecision(string cmd){
-    
+using namespace std;
+void Menu::MakeDecision(string cmd, int round){
+    round_count = round;
     if(firsttime == true){
         UserChoice = 1;
         firsttime = false;
     }
     else{
-        printf("Enter 1-3 ");
-        cin >> UserChoice;
+        //printf("Enter 1-3 ");
+        //cin >> UserChoice;
     }
-    switch(UserChoice){
+    switch(2){      //was UserChoice
         case 1: NewUser(); break;       
         case 2: StartGame(cmd); break;
         case 3: ShowUserInfo(currentuser); break;
@@ -31,7 +31,7 @@ void Menu::NewUser(){
     cout<<"Enter your name: ";
     string n;
     cin>>n;
-    currentuser = new User(n, 0, 0);
+  //  currentuser = new User(n, 0, 0);
     UserChoice = 0;
 }
 
@@ -40,7 +40,7 @@ void Menu::StartGame(string cmd){
 
     if(cmd == "-r"){
         CpuR *rand = new CpuR();
-        for(int i = 0; i < 20; i++){
+        for(int i = 0; i < round_count; i++){
             
             Test.CollectInput(currentuser, rand);
             Test.SetWinner(currentuser);
@@ -49,7 +49,7 @@ void Menu::StartGame(string cmd){
 
     }else if(cmd == "-m"){
         CpuML *mlearn = new CpuML();
-        for(int i = 0; i < 20; i++){
+        for(int i = 0; i < round_count; i++){
             
             Test.CollectInput(currentuser, mlearn);
             Test.SetWinner(currentuser);

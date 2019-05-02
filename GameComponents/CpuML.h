@@ -5,7 +5,7 @@
 #include <string>
 #include <stdlib.h>
 #include <stdio.h>
-#include "Choice.h"
+#include "Choice2.h"
 #include "CpuPlayer.h"
 #include "FileManager.h"
 #include <vector>
@@ -15,7 +15,7 @@ class CpuML : public CpuPlayer
 {
 	public:
 	CpuML() : counter(0) {}
-
+	int last_choice;
 	void Decision(){
 		FileManager File;
         ggData = File.readFromFile();
@@ -25,44 +25,47 @@ class CpuML : public CpuPlayer
 			int i = findPosition(ggData);
 			if((int(ggData[i][6]) >= int(ggData[i+1][6])) && (int(ggData[i][6]) >= int(ggData[i+2][6]))){
 				//They will choose rock lets choose paper
-				choiceSetter(Choice::PAPER);
+				choiceSetter(Choice2::PAPER);
+				
 				cout<<"The CPU chose paper\n";
 			}else if((int(ggData[i+1][6]) >= int(ggData[i][6])) && (int(ggData[i+1][6]) >= int(ggData[i+2][6]))){
 				//They will choose paper lets choose scissor
-				choiceSetter(Choice::SCISSOR);
+				choiceSetter(Choice2::SCISSOR);
 				cout<<"The CPU chose scissors\n";
+				
 			}
 			else{
 				//They will choose scissor lets choose rock
-				choiceSetter(Choice::ROCK);
+				choiceSetter(Choice2::ROCK);
+				
 				cout<<"The CPU chose rock\n";
 			}
 		}else{
 			//do random
 			int CpuChoice = (rand()%3) + 1;
 			switch(CpuChoice){
-				case 1: choiceSetter(Choice::ROCK); break;
-				case 2: choiceSetter(Choice::PAPER); break;
-				case 3: choiceSetter(Choice::SCISSOR); break;
-				default: choiceSetter(Choice::INVALID); break;
+				case 1: choiceSetter(Choice2::ROCK); break;
+				case 2: choiceSetter(Choice2::PAPER); break;
+				case 3: choiceSetter(Choice2::SCISSOR); break;
+				default: choiceSetter(Choice2::INVALID); break;
 
 			}	
 		}
 	}
 	
-	void Modifylast5(Choice lastchoice){
+	void Modifylast5(Choice2 lastchoice){
 		if(counter >= 5){
 			switch(lastchoice){
-				case(Choice::ROCK): shifterInsert('R'); break;
-				case(Choice::PAPER): shifterInsert('P'); break;
-				case(Choice::SCISSOR): shifterInsert('S'); break;
+				case(Choice2::ROCK): shifterInsert('R'); break;
+				case(Choice2::PAPER): shifterInsert('P'); break;
+				case(Choice2::SCISSOR): shifterInsert('S'); break;
 			}
 		}
 		else{
 			switch(lastchoice){
-				case(Choice::ROCK): last5[counter] = 'R'; break;
-				case(Choice::PAPER): last5[counter] = 'P'; break;
-				case(Choice::SCISSOR): last5[counter] = 'S'; break;
+				case(Choice2::ROCK): last5[counter] = 'R'; break;
+				case(Choice2::PAPER): last5[counter] = 'P'; break;
+				case(Choice2::SCISSOR): last5[counter] = 'S'; break;
 			}
 			counter ++;
 			if(counter == 5){

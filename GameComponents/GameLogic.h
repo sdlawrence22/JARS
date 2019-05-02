@@ -7,7 +7,7 @@
 #include "CpuR.h"
 #include "CpuML.h"
 #include "User.h"
-#include "Choice.h"
+#include "Choice2.h"
 using namespace std;
 
 class GameLogic
@@ -19,11 +19,11 @@ class GameLogic
 	bool UpdateUserRecord();
 	bool UpdateLB();
 	bool PlayAgain();
-	
-	private:
-	Choice P1Choice;
-	Choice P2Choice;
+	Choice2 P1Choice;
+	Choice2 P2Choice;
 	string winner;
+	private:
+	
 };
 
 #endif /* GameLogic_H_ */

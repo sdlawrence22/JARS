@@ -10,7 +10,7 @@ using namespace std;
 class Menu
 {
 	public:
-	void MakeDecision(string cmd);
+	void MakeDecision(string cmd, int round);
 	void ShowUserInfo(User *a);
 	// User* getCurrentUser();
 	// void NewUser(string name);
@@ -22,6 +22,7 @@ class Menu
 	int UserChoice;
 	User *currentuser;
 	bool firsttime;
+	int round_count;
 };
 
 #endif /* Menu_H */

@@ -5,7 +5,7 @@
 #include <string>
 #include <stdlib.h>
 #include <stdio.h>
-#include "Choice.h"
+#include "Choice2.h"
 #include "CpuPlayer.h"
 using namespace std;
 
@@ -16,9 +16,9 @@ class CpuR : public CpuPlayer
 		int CpuChoice = (rand()%3) + 1;
 
 		switch(CpuChoice){
-			case 1: choiceSetter(Choice::ROCK); break;
-			case 2: choiceSetter(Choice::PAPER); break;
-			case 3: choiceSetter(Choice::SCISSOR); break;
+			case 1: choiceSetter(Choice2::ROCK); break;
+			case 2: choiceSetter(Choice2::PAPER); break;
+			case 3: choiceSetter(Choice2::SCISSOR); break;
 
 		}
 	}
@@ -27,7 +27,7 @@ class CpuR : public CpuPlayer
 	}
 
 	// private:
-	// Choice cpu;
+	// Choice2 cpu;
 	
 };
 
