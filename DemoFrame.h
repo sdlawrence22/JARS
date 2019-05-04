@@ -38,7 +38,8 @@ public:
      */
     void on_quit(wxCommandEvent& event);
 
-    void on_start(wxCommandEvent& event);
+    void on_startR(wxCommandEvent& event);
+    void on_startML(wxCommandEvent& event);
     
     static int round_max;
     static int round_count;
@@ -74,7 +75,8 @@ enum
 {
     RPS_Quit  = wxID_EXIT,
     RPS_About = wxID_ABOUT,
-    RPS_Start = wxID_ANY
+    RPS_StartR = wxID_UP,
+    RPS_StartML = wxID_ANY
 };
 
 #endif /* DEMOFRAME_H_ */

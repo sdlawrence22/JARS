@@ -4,6 +4,7 @@
 bool reset = true;
 int ButtonPanel::round_max = 10;
 int ButtonPanel::round_count = 0;
+string ButtonPanel::mode = "-r";
 
 
 void ButtonPanel::init()
@@ -255,7 +256,7 @@ void ButtonPanel::update_round_text()
         player22->Losses = 0;
         player22->Ties = 0;
         ButtonPanel::reset = false;
-        cpu22 = new CpuML();
+        cpu22 = Factory.decideMode(mode);
         GameLogic gl22;
     }
     

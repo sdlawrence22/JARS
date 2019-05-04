@@ -5,7 +5,7 @@
 #include "Choice.h"
 #include "GameComponents/Choice2.h"
 #include "GameComponents/User.h"
-#include "GameComponents/CpuML.h"
+#include "GameComponents/CpuFactory.h"
 #include "GameComponents/GameLogic.h"
 
 
@@ -47,9 +47,11 @@ public:
     void on_scissors(wxCommandEvent& event);
     static int round_max;
     static int round_count;
+    static string mode;
     int jk = 0;
     User *player22  = new User(0, 0, 0);
-    CpuPlayer *cpu22 = new CpuML();
+    CpuFactory Factory;
+    CpuPlayer *cpu22 = Factory.decideMode("-r");
     GameLogic gl22;
     
     static bool reset;

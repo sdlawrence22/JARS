@@ -3,6 +3,7 @@
 
 int round_max = 1;
 bool ButtonPanel::reset = false;
+//string mode = "-r";
 Menu a;
     
 // The event table.
@@ -10,7 +11,8 @@ wxBEGIN_EVENT_TABLE(DemoFrame, wxFrame)
 
     EVT_MENU(RPS_Quit,  DemoFrame::on_quit)
     EVT_MENU(RPS_About, DemoFrame::on_about)
-    EVT_MENU(RPS_Start,  DemoFrame::on_start)
+    EVT_MENU(RPS_StartR,  DemoFrame::on_startR)
+    EVT_MENU(RPS_StartML,  DemoFrame::on_startML)
 
 wxEND_EVENT_TABLE()
 
@@ -54,7 +56,8 @@ void DemoFrame::init()
 void DemoFrame::init_menu_bar()
 {
     wxMenu *fileMenu = new wxMenu;
-    fileMenu->Append(RPS_Start, "S&tart\tAlt-S", "Start game");
+    fileMenu->Append(RPS_StartR, "S&tart Random\tAlt-S", "Start game with random");
+    fileMenu->Append(RPS_StartML, "S&tart MachineLearning\tAlt-T", "Start game with machine learning");
     fileMenu->Append(RPS_Quit,  "E&xit\tAlt-X", "Quit program");
 
     wxMenu *helpMenu = new wxMenu;
@@ -100,7 +103,7 @@ void DemoFrame::on_quit(wxCommandEvent& WXUNUSED(event))
     Close(true);  // true is to force the frame to close
 }
 
-void DemoFrame::on_start(wxCommandEvent& WXUNUSED(event))
+void DemoFrame::on_startR(wxCommandEvent& WXUNUSED(event))
 {
     long round = wxGetNumberFromUser( wxT("Please enter how many rounds\n")
                                     wxT("you would like to play."),
@@ -111,13 +114,35 @@ void DemoFrame::on_start(wxCommandEvent& WXUNUSED(event))
     //round_set.set_round_max(round);
     //ButtonPanel::round_max = round;
     //ButtonPanel::player22->clear();
+    ButtonPanel::mode = "-r";
     ButtonPanel::round_max = round;
     ButtonPanel::round_count = 0;
     ButtonPanel::reset = true;
     button_panel->update_round_text();
     button_panel->clear_button_choice_text();
 
-    printf("Beginning a new match with %li rounds\n", round);
+    printf("Beginning a new match with %li rounds against random cpu\n", round);
+}
+
+void DemoFrame::on_startML(wxCommandEvent& WXUNUSED(event))
+{
+    long round = wxGetNumberFromUser( wxT("Please enter how many rounds\n")
+                                    wxT("you would like to play."),
+                                    wxT("Enter a number:"), wxT("Numeric input test"),
+                                     20, 0, 100, this );
+    //logic to start a game rounds = round
+    //ButtonPanel round_set;
+    //round_set.set_round_max(round);
+    //ButtonPanel::round_max = round;
+    //ButtonPanel::player22->clear();
+    ButtonPanel::mode = "-m";
+    ButtonPanel::round_max = round;
+    ButtonPanel::round_count = 0;
+    ButtonPanel::reset = true;
+    button_panel->update_round_text();
+    button_panel->clear_button_choice_text();
+
+    printf("Beginning a new match with %li rounds against machine learning\n", round);
 
 
 

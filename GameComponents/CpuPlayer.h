@@ -7,8 +7,7 @@
 #include <stdio.h>
 #include "Choice2.h"
 #include "FileManager.h"
-#include "Mode.h"
-#include "GameModeFactory.h"
+//#include "GameModeFactory.h"
 
 using namespace std;
 
@@ -16,17 +15,17 @@ class CpuPlayer
 {
 	public:
 
-	CpuPlayer(GameModeFactory fact){
-		factory = fact;
-	}
+	// CpuPlayer(GameModeFactory fact){
+	// 	factory = fact;
+	// }
 
-	Mode decideMode(string mode){
-		Mode modeChoice;
-		modeChoice = factory.decideMode(mode);
-		modeChoice.gameModeSelect();
+	// Mode decideMode(string mode){
+	// 	Mode modeChoice;
+	// 	modeChoice = factory.decideMode(mode);
+	// 	modeChoice.gameModeSelect();
 
-		return modeChoice;
-	}
+	// 	return modeChoice;
+	// }
 
 	void choiceSetter(Choice2 ch){
 		cpu = ch;
@@ -46,8 +45,8 @@ class CpuPlayer
 	int last_choice;
 	private:
 	Choice2 cpu;
-	string mode;
-	GameModeFactory factory;
+	// string mode;
+	//GameModeFactory factory;
 	
 };
 
