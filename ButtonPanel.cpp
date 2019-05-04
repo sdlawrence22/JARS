@@ -266,6 +266,17 @@ void ButtonPanel::update_round_text()
     {
         round_display_text->SetLabelText("END");
         printf("The game has concluded please start a new one\n");
+               switch(cpu22->choiceGetter()){
+            
+            case(Choice2::ROCK): player_wing->SetLabelText("Scissors");cpu_wing->SetLabelText("Rock");break;
+            case(Choice2::PAPER): player_wing->SetLabelText("Rock");cpu_wing->SetLabelText("Paper");break;
+            case(Choice2::SCISSOR): player_wing->SetLabelText("Paper");cpu_wing->SetLabelText("Scissors");break;
+            default: printf("Problem\n");
+        }
+        winner_text2->SetLabelText(gl22.winner);
+        player_win->SetLabelText(int_to_wxString(player22->Wins));
+        cpu_win->SetLabelText(int_to_wxString(player22->Losses));
+        ties_choses_text->SetLabelText(int_to_wxString(player22->Ties));
     }
     else
     {

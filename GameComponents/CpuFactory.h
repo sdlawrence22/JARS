@@ -14,7 +14,7 @@ using namespace std;
 class CpuFactory{
     public:
     // CpuFactory(string mode);
-    string getMode();
+    
     CpuPlayer* decideMode(string mode);
 
     private:

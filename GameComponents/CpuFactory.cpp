@@ -1,10 +1,5 @@
 #include "CpuFactory.h"
 
-
-string CpuFactory::getMode(){
-    return game_mode;
-}
-
 CpuPlayer* CpuFactory::decideMode(string mode){
     if(mode == "-r"){
         printf("Generated Random Player\n");
