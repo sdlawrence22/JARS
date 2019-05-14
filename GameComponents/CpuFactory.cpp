@@ -7,7 +7,7 @@ CpuPlayer* CpuFactory::decideMode(string mode){
         return new CpuR();
     }else if( mode == "-m"){
         printf("Generated Pro Player\n");
-        //return MachineLearningMode class
+        //return MachineLearningMode object
         return new CpuML();
     }
 }
